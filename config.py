@@ -62,26 +62,28 @@ class MeshConfig:
 
 MESH_CONFIG = MeshConfig()
 
-# Visualization Theme & Plotly 3D Styling
+# Visualization Theme & Plotly 3D Styling (Botanical Forest, Terracotta & Warm Sand Palette)
 @dataclass(frozen=True)
 class VisualTheme:
-    DARK_BG_COLOR: str = "#0B0F19"
-    CONTAINER_BG: str = "#111827"
-    CARD_BG: str = "#1E293B"
-    PRIMARY_CYAN: str = "#06B6D4"
-    ACCENT_TEAL: str = "#14B8A6"
-    CRIMSON_RED: str = "#EF4444"
-    AMBER_ORANGE: str = "#F59E0B"
-    TEXT_LIGHT: str = "#F8FAFC"
-    TEXT_MUTED: str = "#94A3B8"
+    DARK_BG_COLOR: str = "#0D1F18"        # Deep Forest Pine Green
+    CONTAINER_BG: str = "#152E24"         # Rich Deep Sage
+    CARD_BG: str = "#1C3B2F"              # Dark Forest Card
+    CARD_BROWN: str = "#5C3720"           # Earthy Terracotta Card
+    CARD_CHESTNUT: str = "#442716"        # Deep Chestnut
+    PRIMARY_GOLD: str = "#DEBA8A"         # Warm Golden Wheat / Sand
+    ACCENT_SAGE: str = "#7EA878"          # Fresh Leaf Sage
+    TERRACOTTA_RED: str = "#D96B43"       # Terracotta / Coral Accent
+    AMBER_WARM: str = "#E5B887"           # Warm Sand Amber
+    TEXT_LIGHT: str = "#F7EEDB"           # Warm Ivory Cream
+    TEXT_MUTED: str = "#9EB3A6"           # Soft Sage Muted
     
     # 3D Mesh Plotly Colors
-    BRAIN_COLOR: str = "rgb(56, 189, 248)"    # Bright Sky Blue
-    BRAIN_OPACITY: float = 0.14
-    TUMOR_COLOR: str = "rgb(239, 68, 68)"     # Crimson Red
-    TUMOR_OPACITY: float = 0.88
-    EDEMA_COLOR: str = "rgb(245, 158, 11)"    # Amber Orange
-    EDEMA_OPACITY: float = 0.35
+    BRAIN_COLOR: str = "rgb(95, 160, 125)"    # Translucent Organic Jade / Sage
+    BRAIN_OPACITY: float = 0.16
+    TUMOR_COLOR: str = "rgb(217, 107, 67)"    # Warm Terracotta Red / Coral
+    TUMOR_OPACITY: float = 0.90
+    EDEMA_COLOR: str = "rgb(222, 186, 138)"   # Warm Golden Wheat
+    EDEMA_OPACITY: float = 0.40
 
 THEME = VisualTheme()
 

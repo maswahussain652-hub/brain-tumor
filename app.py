@@ -33,29 +33,29 @@ st.set_page_config(
 st.markdown(
     f"""
     <style>
-    /* Dark Theme Core */
+    /* Botanical Forest & Earthy Terracotta Theme Core */
     .stApp {{
         background-color: {THEME.DARK_BG_COLOR};
         color: {THEME.TEXT_LIGHT};
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }}
     
-    /* Top Header */
+    /* Top Header with Forest Wave Glassmorphism */
     .header-box {{
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
-        border: 1px solid rgba(6, 182, 212, 0.25);
-        border-radius: 12px;
-        padding: 20px 28px;
+        background: linear-gradient(135deg, rgba(29, 61, 49, 0.90), rgba(18, 38, 30, 0.96));
+        border: 1px solid rgba(222, 186, 138, 0.35);
+        border-radius: 16px;
+        padding: 22px 30px;
         margin-bottom: 24px;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(10px);
     }}
     
     .header-title {{
-        font-size: 2.1rem;
+        font-size: 2.15rem;
         font-weight: 700;
         letter-spacing: -0.5px;
-        background: linear-gradient(90deg, #38BDF8, #22D3EE, #818CF8);
+        background: linear-gradient(90deg, #F7EEDB, #DEBA8A, #A1C697);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin: 0;
@@ -67,66 +67,111 @@ st.markdown(
         margin-top: 6px;
     }}
     
-    /* Metric Cards */
+    /* Organic Earthy Metric Cards */
     .metric-card {{
-        background: rgba(17, 24, 39, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 10px;
-        padding: 16px;
+        border-radius: 14px;
+        padding: 18px 14px;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }}
     .metric-card:hover {{
-        border-color: {THEME.PRIMARY_CYAN};
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
     }}
+    
+    .metric-card-terracotta {{
+        background: linear-gradient(145deg, #704328, #4E2E1B);
+        border: 1px solid rgba(222, 186, 138, 0.40);
+    }}
+    .metric-card-sand {{
+        background: linear-gradient(145deg, #8E6845, #5E432A);
+        border: 1px solid rgba(222, 186, 138, 0.40);
+    }}
+    .metric-card-forest {{
+        background: linear-gradient(145deg, #2D5E4C, #1A3D30);
+        border: 1px solid rgba(161, 198, 151, 0.35);
+    }}
+    .metric-card-sage {{
+        background: linear-gradient(145deg, #3D6E50, #274D36);
+        border: 1px solid rgba(161, 198, 151, 0.35);
+    }}
+    .metric-card-chestnut {{
+        background: linear-gradient(145deg, #5C3720, #3E2314);
+        border: 1px solid rgba(217, 107, 67, 0.40);
+    }}
+    
     .metric-title {{
-        font-size: 0.78rem;
-        font-weight: 600;
+        font-size: 0.75rem;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: {THEME.TEXT_MUTED};
+        letter-spacing: 0.08em;
+        color: #DEBA8A;
         margin-bottom: 6px;
     }}
     .metric-value {{
-        font-size: 1.6rem;
+        font-size: 1.65rem;
         font-weight: 700;
-        color: #F1F5F9;
+        color: #F7EEDB;
     }}
     .metric-sub {{
         font-size: 0.75rem;
-        color: {THEME.PRIMARY_CYAN};
+        color: #F2D8B3;
         margin-top: 4px;
+        opacity: 0.9;
     }}
     
-    /* Badges */
+    /* Rounded Botanical Badges */
     .badge {{
         display: inline-block;
-        padding: 4px 10px;
+        padding: 5px 12px;
         border-radius: 9999px;
         font-size: 0.75rem;
         font-weight: 600;
+        letter-spacing: 0.02em;
     }}
-    .badge-gpu {{
-        background: rgba(16, 185, 129, 0.15);
-        color: #10B981;
-        border: 1px solid rgba(16, 185, 129, 0.3);
+    .badge-sage {{
+        background: rgba(126, 168, 120, 0.22);
+        color: #A1C697;
+        border: 1px solid rgba(126, 168, 120, 0.45);
     }}
-    .badge-cpu {{
-        background: rgba(59, 130, 246, 0.15);
-        color: #60A5FA;
-        border: 1px solid rgba(59, 130, 246, 0.3);
+    .badge-gold {{
+        background: rgba(222, 186, 138, 0.22);
+        color: #DEBA8A;
+        border: 1px solid rgba(222, 186, 138, 0.45);
     }}
-    .badge-critical {{
-        background: rgba(239, 68, 68, 0.2);
-        color: #F87171;
-        border: 1px solid rgba(239, 68, 68, 0.4);
+    .badge-terracotta {{
+        background: rgba(217, 107, 67, 0.25);
+        color: #E58C6B;
+        border: 1px solid rgba(217, 107, 67, 0.45);
     }}
     .badge-safe {{
-        background: rgba(34, 197, 94, 0.2);
-        color: #4ADE80;
-        border: 1px solid rgba(34, 197, 94, 0.4);
+        background: rgba(126, 168, 120, 0.25);
+        color: #A1C697;
+        border: 1px solid rgba(126, 168, 120, 0.45);
+    }}
+    
+    /* Buttons Pill Design */
+    .stButton > button, .stDownloadButton > button {{
+        background: linear-gradient(135deg, #DEBA8A 0%, #C99D69 100%) !important;
+        color: #2D1E12 !important;
+        font-weight: 700 !important;
+        border: none !important;
+        border-radius: 9999px !important;
+        padding: 10px 24px !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.2s ease !important;
+    }}
+    .stButton > button:hover, .stDownloadButton > button:hover {{
+        background: linear-gradient(135deg, #E8C89E 0%, #D8AB77 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(222, 186, 138, 0.45) !important;
+    }}
+    
+    /* Sidebar Styling */
+    section[data-testid="stSidebar"] {{
+        background-color: #12281E !important;
+        border-right: 1px solid rgba(222, 186, 138, 0.15) !important;
     }}
     </style>
     """,
@@ -208,15 +253,15 @@ def create_3d_mesh_figure(
             )
         )
 
-    # Clean dark scene camera and bounds
+    # Clean botanical dark scene camera and bounds
     axis_config = dict(
         showbackground=True,
-        backgroundcolor="#070A12",
-        gridcolor="#1E293B",
+        backgroundcolor="#091510",
+        gridcolor="#163024",
         showgrid=True,
         zeroline=False,
         showticklabels=True,
-        tickfont=dict(size=10, color="#64748B"),
+        tickfont=dict(size=10, color="#8EA898"),
         title="",
     )
 
@@ -235,9 +280,9 @@ def create_3d_mesh_figure(
         ),
         margin=dict(l=0, r=0, b=0, t=20),
         legend=dict(
-            font=dict(color="#CBD5E1", size=11),
-            bgcolor="rgba(15, 23, 42, 0.75)",
-            bordercolor="rgba(255, 255, 255, 0.1)",
+            font=dict(color="#F7EEDB", size=11),
+            bgcolor="rgba(21, 46, 36, 0.88)",
+            bordercolor="rgba(222, 186, 138, 0.35)",
             borderwidth=1,
             yanchor="top",
             y=0.98,
@@ -297,7 +342,7 @@ def render_slice_figure(
         )
     )
 
-    # 2. Predicted Tumor Probability Heatmap Overlay
+    # 2. Predicted Tumor Probability Heatmap Overlay (Warm Terracotta to Ember)
     active_overlay = prob_slice.copy()
     active_overlay[mask_slice == 0] = np.nan  # Mask out background
 
@@ -306,17 +351,17 @@ def render_slice_figure(
             go.Heatmap(
                 z=active_overlay,
                 colorscale=[
-                    [0.0, "rgba(255, 80, 80, 0.0)"],
-                    [0.5, "rgba(255, 60, 0, 0.65)"],
-                    [1.0, "rgba(220, 20, 60, 0.95)"],
+                    [0.0, "rgba(217, 107, 67, 0.0)"],
+                    [0.4, "rgba(229, 140, 60, 0.65)"],
+                    [1.0, "rgba(217, 75, 45, 0.95)"],
                 ],
                 zmin=0.0,
                 zmax=1.0,
                 opacity=alpha_overlay,
                 showscale=True,
                 colorbar=dict(
-                    title=dict(text="Tumor Prob", font=dict(color="#94A3B8", size=10)),
-                    tickfont=dict(color="#94A3B8", size=9),
+                    title=dict(text="Tumor Prob", font=dict(color="#DEBA8A", size=10)),
+                    tickfont=dict(color="#9EB3A6", size=9),
                     len=0.7,
                     thickness=12,
                 ),
@@ -325,13 +370,13 @@ def render_slice_figure(
             )
         )
 
-    # 3. Ground Truth Contour if enabled
+    # 3. Ground Truth Contour if enabled (Warm Golden Wheat Border)
     if show_gt and np.any(gt_slice > 0):
         fig.add_trace(
             go.Contour(
                 z=gt_slice,
                 contours_coloring="none",
-                line=dict(color="#10B981", width=2),
+                line=dict(color="#DEBA8A", width=2),
                 showscale=False,
                 name="Ground Truth Border",
                 hoverinfo="none",
@@ -339,17 +384,17 @@ def render_slice_figure(
         )
 
     fig.update_layout(
-        paper_bgcolor="#0B0F19",
-        plot_bgcolor="#070A12",
+        paper_bgcolor="#091510",
+        plot_bgcolor="#060E0B",
         xaxis=dict(
-            title=dict(text=xlabel, font=dict(color="#64748B", size=11)),
-            tickfont=dict(color="#64748B", size=9),
+            title=dict(text=xlabel, font=dict(color="#9EB3A6", size=11)),
+            tickfont=dict(color="#9EB3A6", size=9),
             showgrid=False,
             zeroline=False,
         ),
         yaxis=dict(
-            title=dict(text=ylabel, font=dict(color="#64748B", size=11)),
-            tickfont=dict(color="#64748B", size=9),
+            title=dict(text=ylabel, font=dict(color="#9EB3A6", size=11)),
+            tickfont=dict(color="#9EB3A6", size=9),
             showgrid=False,
             zeroline=False,
             autorange="reversed",
@@ -365,10 +410,10 @@ def main():
     st.sidebar.markdown(
         """
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-            <span style="font-size: 2rem;">🧠</span>
+            <span style="font-size: 2rem;">🌿</span>
             <div>
-                <h3 style="margin: 0; color: #38BDF8; font-size: 1.25rem;">NeuroScan 3D</h3>
-                <span style="color: #64748B; font-size: 0.75rem;">Medical AI System</span>
+                <h3 style="margin: 0; color: #DEBA8A; font-size: 1.25rem;">NeuroScan 3D</h3>
+                <span style="color: #9EB3A6; font-size: 0.75rem;">Botanical Medical AI</span>
             </div>
         </div>
         """,
@@ -445,20 +490,19 @@ def main():
     # --- Header Display ---
     inference_engine = get_inference_engine()
     device_label = "CUDA GPU" if inference_engine.device.type == "cuda" else "CPU Accelerator"
-    badge_class = "badge-gpu" if inference_engine.device.type == "cuda" else "badge-cpu"
 
     st.markdown(
         f"""
         <div class="header-box">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <div>
-                    <h1 class="header-title">NeuroScan 3D &mdash; Volumetric Brain Tumor AI</h1>
+                    <h1 class="header-title">🌿 NeuroScan 3D &mdash; Volumetric Brain Tumor AI</h1>
                     <p class="header-subtitle">Deep 3D UNet Pathology Segmentation &middot; Marching Cubes Iso-Surface Extraction &middot; Orthogonal MPR</p>
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <span class="badge {badge_class}">Hardware: {device_label}</span>
-                    <span class="badge badge-gpu">PyTorch 3D UNet: Ready</span>
-                    <span class="badge" style="background: rgba(129, 140, 248, 0.2); color: #818CF8; border: 1px solid rgba(129, 140, 248, 0.3);">Voxel Grid: 64&times;64&times;64</span>
+                    <span class="badge badge-sage">Hardware: {device_label}</span>
+                    <span class="badge badge-gold">PyTorch 3D UNet: Ready</span>
+                    <span class="badge badge-terracotta">Voxel Grid: 64&times;64&times;64</span>
                 </div>
             </div>
         </div>
@@ -506,15 +550,15 @@ def main():
             step_size=step_size,
         )
 
-    # --- Metric Cards Row ---
+    # --- Metric Cards Row (Terracotta, Sand, Forest, Sage, Chestnut) ---
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card metric-card-terracotta">
                 <div class="metric-title">Tumor Volume</div>
-                <div class="metric-value">{metrics['volume_cm3']} <span style="font-size: 1rem; color:#94A3B8;">cm³</span></div>
+                <div class="metric-value">{metrics['volume_cm3']} <span style="font-size: 1rem; color:#DEBA8A;">cm³</span></div>
                 <div class="metric-sub">{metrics['volume_mm3']} mm³ ({metrics['voxel_count']} voxels)</div>
             </div>
             """,
@@ -524,9 +568,9 @@ def main():
     with col2:
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card metric-card-sand">
                 <div class="metric-title">Maximum Diameter</div>
-                <div class="metric-value">{metrics['longest_diameter_mm']} <span style="font-size: 1rem; color:#94A3B8;">mm</span></div>
+                <div class="metric-value">{metrics['longest_diameter_mm']} <span style="font-size: 1rem; color:#DEBA8A;">mm</span></div>
                 <div class="metric-sub">3D Feret Bounding Dimension</div>
             </div>
             """,
@@ -537,7 +581,7 @@ def main():
         cz, cy, cx = metrics["centroid_mm"]
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card metric-card-forest">
                 <div class="metric-title">Centroid Coordinates</div>
                 <div class="metric-value" style="font-size: 1.25rem;">({cx}, {cy}, {cz})</div>
                 <div class="metric-sub">Anatomical Space (mm)</div>
@@ -551,9 +595,9 @@ def main():
         iou_text = f"{metrics['iou_score'] * 100:.1f}%" if metrics["iou_score"] is not None else "N/A"
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card metric-card-sage">
                 <div class="metric-title">Model Dice Score</div>
-                <div class="metric-value" style="color: #38BDF8;">{dice_text}</div>
+                <div class="metric-value" style="color: #F7EEDB;">{dice_text}</div>
                 <div class="metric-sub">IoU (Jaccard): {iou_text}</div>
             </div>
             """,
@@ -562,10 +606,10 @@ def main():
 
     with col5:
         risk = metrics["risk_tier"]
-        badge_style = "badge-critical" if "High" in risk else ("badge-safe" if "Negative" in risk else "badge-cpu")
+        badge_style = "badge-terracotta" if "High" in risk else ("badge-sage" if "Negative" in risk else "badge-gold")
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card metric-card-chestnut">
                 <div class="metric-title">Clinical Assessment</div>
                 <div style="margin-top: 6px;"><span class="badge {badge_style}">{risk}</span></div>
                 <div class="metric-sub">{case_data['title'].split(':')[0]}</div>

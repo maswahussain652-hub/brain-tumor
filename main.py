@@ -99,10 +99,10 @@ def launch_application() -> None:
         "--server.address=localhost",
         "--server.headless=false",
         "--theme.base=dark",
-        "--theme.primaryColor=#06B6D4",
-        "--theme.backgroundColor=#0B0F19",
-        "--theme.secondaryBackgroundColor=#111827",
-        "--theme.textColor=#F8FAFC",
+        "--theme.primaryColor=#DEBA8A",
+        "--theme.backgroundColor=#0D1F18",
+        "--theme.secondaryBackgroundColor=#152E24",
+        "--theme.textColor=#F7EEDB",
     ]
 
     print("=" * 80)
