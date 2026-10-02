@@ -62,28 +62,27 @@ class MeshConfig:
 
 MESH_CONFIG = MeshConfig()
 
-# Visualization Theme & Plotly 3D Styling (Botanical Forest, Terracotta & Warm Sand Palette)
+# Visualization Theme & Plotly 3D Styling (Sleek Obsidian Black & Electric Cyber-Medical Palette)
 @dataclass(frozen=True)
 class VisualTheme:
-    DARK_BG_COLOR: str = "#0D1F18"        # Deep Forest Pine Green
-    CONTAINER_BG: str = "#152E24"         # Rich Deep Sage
-    CARD_BG: str = "#1C3B2F"              # Dark Forest Card
-    CARD_BROWN: str = "#5C3720"           # Earthy Terracotta Card
-    CARD_CHESTNUT: str = "#442716"        # Deep Chestnut
-    PRIMARY_GOLD: str = "#DEBA8A"         # Warm Golden Wheat / Sand
-    ACCENT_SAGE: str = "#7EA878"          # Fresh Leaf Sage
-    TERRACOTTA_RED: str = "#D96B43"       # Terracotta / Coral Accent
-    AMBER_WARM: str = "#E5B887"           # Warm Sand Amber
-    TEXT_LIGHT: str = "#F7EEDB"           # Warm Ivory Cream
-    TEXT_MUTED: str = "#9EB3A6"           # Soft Sage Muted
+    DARK_BG_COLOR: str = "#070A0F"        # Deep Obsidian Space Black
+    CONTAINER_BG: str = "#0D131F"         # Deep Charcoal Slate
+    CARD_BG: str = "#111827"              # Dark Graphite Glass Card
+    CARD_BORDER: str = "rgba(6, 182, 212, 0.28)"  # Glowing Cyan Border
+    PRIMARY_CYAN: str = "#00F2FE"         # Electric Glowing Cyan
+    ACCENT_BLUE: str = "#38BDF8"          # Vivid Sky Blue
+    CRIMSON_RED: str = "#FF3366"          # Vibrant Neon Ruby Crimson
+    AMBER_ORANGE: str = "#F59E0B"         # Flame Amber
+    TEXT_LIGHT: str = "#F8FAFC"           # Pure Crisp Platinum White
+    TEXT_MUTED: str = "#94A3B8"           # Slate Muted Silver
     
     # 3D Mesh Plotly Colors
-    BRAIN_COLOR: str = "rgb(95, 160, 125)"    # Translucent Organic Jade / Sage
-    BRAIN_OPACITY: float = 0.16
-    TUMOR_COLOR: str = "rgb(217, 107, 67)"    # Warm Terracotta Red / Coral
+    BRAIN_COLOR: str = "rgb(56, 189, 248)"    # Translucent Holographic Sky Blue
+    BRAIN_OPACITY: float = 0.15
+    TUMOR_COLOR: str = "rgb(255, 51, 102)"    # Vibrant Neon Ruby Crimson
     TUMOR_OPACITY: float = 0.90
-    EDEMA_COLOR: str = "rgb(222, 186, 138)"   # Warm Golden Wheat
-    EDEMA_OPACITY: float = 0.40
+    EDEMA_COLOR: str = "rgb(245, 158, 11)"    # Amber Flare
+    EDEMA_OPACITY: float = 0.38
 
 THEME = VisualTheme()
 
